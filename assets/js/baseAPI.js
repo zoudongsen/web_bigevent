@@ -7,4 +7,21 @@
 $.ajaxPrefilter(function(options){
     options.url = baseURL + options.url
     // console.log(options.url);
+
+    // 统一有权限的借口，社会headers请求头
+    if(options.url.indexOf('/my/') !==-1){
+        options.headers = {
+            Authorization:localStorage.getItem('token')||''
+        }
+    }
+
+    // 不论成功还是失败，最终都会调用comlete回调函数
+    options.comlete = function(res){
+        var data = responseJSON
+        if(res.status === 1 && message == '身份认证失败')
+        // 1.删除token
+        localStorage.removeItem('token');
+        // 2.页面跳转
+        location.href = '/login.html'
+    } 
 })
