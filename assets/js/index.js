@@ -22,7 +22,7 @@ $(function () {
 })
 
 
-// 获取用户的基本信息
+// 获取用户的基本信息(此方法必须是全局的，后面info要用)
 function getUserInfo() {
     $.ajax({
         method: 'GET',
