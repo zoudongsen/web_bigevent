@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f3f5;
+}
+.layui-card-header {
+    display: flex;
+    /* 设置主轴方向上的子元素对齐方式 */
+    justify-content: space-between;
+    /* 设置侧轴方向上的子元素排列方式 */
+    align-items: center;
+}
+#boxAddCate {
+  padding: 20px 30px;
+}
